@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhật Ký</title>
+</head>
+<body>
+<h2>Nhật Ký Của Bạn</h2>
+<p th:text="${message}">abc</p>
+<form th:action="@{/blog/create}">
+    <button type="submit">Tạo blog mới</button>
+</form>
+<table th:each="blog : ${blogs}">
+    <tr >
+        <td th:text="${blog.title}"></td>
+    </tr>
+    <tr>
+        <td th:text="${blog.content}"></td>
+    </tr>
+    <tr>
+        <td><a th:href="@{http://localhost:8080/blog/edit(id=${blog.id})}">Sửa</a></td>
+        <td ><a th:href="@{http://localhost:8080/blog/remove(id=${blog.id})}">Xóa</a></td>
+    </tr>
+
+</table>
+</body>
+</html>

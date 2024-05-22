@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+<h2>Nhật ký ghi blog</h2>
+<form th:action="@{/blog/save}" th:object="${blog}" method="post">
+<table>
+    <tr>
+       <td>  <input type="text" th:field="*{title}" placeholder="Nhập tiêu đề"></td>
+    </tr>
+    <tr>
+       <td> <input type="text" th:field="*{content}" placeholder="Nhập nội dung"></td>
+    </tr>
+
+</table>
+    <button type="submit">Lưu</button>
+</form>
+</body>
+</html>
